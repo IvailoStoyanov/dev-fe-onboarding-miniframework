@@ -1,21 +1,13 @@
-// using only ES6
+// using jQuery
 
-
-const buttons = document.querySelectorAll('button');
-buttons.forEach(btnClick => btnClick.addEventListener('click', openInfobox));
-
-function openInfobox(event) {
-    const btn = event.target;
-    const elementBlockSelector = 'contactUs';
-    const open = '--opened';
-    const allContactUs = document.querySelectorAll('.contactUs');
+$('.contactUs').hide()
+$('.button').click(function () {
+    const elementBlockSelector = '.contactUs';
     const ctaSection = '.ctaSection';
 
-    allContactUs.forEach(function(element) {
-        if (btn.closest(ctaSection).querySelector('.contactUs') !== element) {
-            element.classList.remove(elementBlockSelector + open);    
-        };
-    });
-    
-    btn.closest(ctaSection).querySelector('.contactUs').classList.toggle(`${elementBlockSelector}${open}`);
-};
+    $(this).closest(ctaSection).find(elementBlockSelector).slideToggle('slow');
+    console.log($(elementBlockSelector).not($(this).closest(ctaSection).find(elementBlockSelector)));
+
+    $(elementBlockSelector).not($(this).closest(ctaSection).find(elementBlockSelector)).slideUp('slow');
+
+});
