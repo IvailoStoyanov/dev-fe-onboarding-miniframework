@@ -1,6 +1,21 @@
-import {animatedScrollTo} from './es6-scroll-to.js';
+// using only ES6
 
-document.querySelector('.title').innerHTML = 'Great success!'
-document.querySelector('.text').innerHTML = 'Javascript is working!'
 
-animatedScrollTo(500);
+const buttons = document.querySelectorAll('button');
+buttons.forEach(btnClick => btnClick.addEventListener('click', openInfobox));
+
+function openInfobox(event) {
+    const btn = event.target;
+    const elementBlockSelector = 'contactUs';
+    const open = '--opened';
+    const allContactUs = document.querySelectorAll('.contactUs');
+    const ctaSection = '.ctaSection';
+
+    allContactUs.forEach(function(element) {
+        if (btn.closest(ctaSection).querySelector('.contactUs') !== element) {
+            element.classList.remove(elementBlockSelector + open);    
+        };
+    });
+    
+    btn.closest(ctaSection).querySelector('.contactUs').classList.toggle(`${elementBlockSelector}${open}`);
+};
