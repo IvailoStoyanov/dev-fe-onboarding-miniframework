@@ -1,6 +1,13 @@
-import {animatedScrollTo} from './es6-scroll-to.js';
+// using jQuery
 
-document.querySelector('.title').innerHTML = 'Great success!'
-document.querySelector('.text').innerHTML = 'Javascript is working!'
+$('.contactUs').hide()
+$('.button').click(function () {
+    const elementBlockSelector = '.contactUs';
+    const ctaSection = '.ctaSection';
 
-animatedScrollTo(500);
+    $(this).closest(ctaSection).find(elementBlockSelector).slideToggle('slow');
+    console.log($(elementBlockSelector).not($(this).closest(ctaSection).find(elementBlockSelector)));
+
+    $(elementBlockSelector).not($(this).closest(ctaSection).find(elementBlockSelector)).slideUp('slow');
+
+});
