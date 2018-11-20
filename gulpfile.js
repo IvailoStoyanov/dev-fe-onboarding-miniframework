@@ -28,7 +28,7 @@ gulp.task('html', function () {
 
 // made an image dirrectory
 gulp.task('image', function(){
-  gulp.src('./src/img/*jpg').pipe(gulp.dest('./srv/img/'));
+  gulp.src('./src/img/*').pipe(gulp.dest('./srv/img/'));
 });
 
 
@@ -51,9 +51,10 @@ gulp.task('livereload', function() {
 
 gulp.task('watch', function() {
   gulp.watch('./src/*.html', ['html']);
+  gulp.watch('./src/img/*', ['image']);
   gulp.watch('./src/js/*.js', ['js']);
   gulp.watch('./src/scss/*.scss', ['sass']);
   gulp.watch('./src/**/*', ['livereload']);
 });
 
-gulp.task('default', ['connect', 'connect:open', 'watch', 'sass', 'js', 'html']);
+gulp.task('default', ['connect', 'connect:open', 'watch', 'sass', 'js', 'html', 'image']);
