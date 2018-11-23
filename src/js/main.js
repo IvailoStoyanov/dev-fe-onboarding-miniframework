@@ -1,13 +1,10 @@
 // using jQuery
 
-$('.contactUs').hide()
-$('.button').click(function () {
-    const elementBlockSelector = '.contactUs';
+$('.ctaSection__button').click(function () {
+    const elementBlockSelector = '.ctaSection__shutterBox';
     const ctaSection = '.ctaSection';
 
     $(this).closest(ctaSection).find(elementBlockSelector).slideToggle('slow');
-    console.log($(elementBlockSelector).not($(this).closest(ctaSection).find(elementBlockSelector)));
-
     $(elementBlockSelector).not($(this).closest(ctaSection).find(elementBlockSelector)).slideUp('slow');
 
 });
