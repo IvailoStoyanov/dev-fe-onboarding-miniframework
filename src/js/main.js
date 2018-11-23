@@ -8,7 +8,6 @@ const toggleShutterBox = {
     },
 
     bindEventListeners: function () {
-        console.log(this);
         
         const self = this;
         self.getButtonsArray.forEach(elem => {
@@ -22,19 +21,19 @@ const toggleShutterBox = {
         const self = this;
         const btn = event.target;
         const elementBlockSelector = '.ctaSection__shutterBox';
-        const elementBlockClass = 'ctaSection__shutterBox';
-        const openModifier = '--opened';
+        const elementBlockClassOpenModifier = 'ctaSection__shutterBox--opened';
         const ctaSectionSelector = '.ctaSection';
+
 
 
         self.allContactUsElementsArray.forEach(elem => {
             if (btn.closest(ctaSectionSelector).querySelector(elementBlockSelector) !== elem) {
-                elem.classList.remove(elementBlockClass + openModifier);
+                elem.classList.remove(elementBlockClassOpenModifier);
             }
         });
 
-        btn.closest(ctaSectionSelector).querySelector(elementBlockSelector).classList.toggle(elementBlockClass + openModifier);
+        btn.closest(ctaSectionSelector).querySelector(elementBlockSelector).classList.toggle(elementBlockClassOpenModifier);
     }
 };
 
-toggleShutterBox.init();
+toggleShutterBox.init();   

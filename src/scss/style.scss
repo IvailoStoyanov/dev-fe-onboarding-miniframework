@@ -79,35 +79,35 @@ h2 {
   }
 }
 
-.ctaSection__button {
-  background: $black;
-  color: $white;
-  border: none;
-  padding: 10px 15px;
-  font-family: 'Noto Serif JP', sans-serif;
-  cursor: pointer;
-  width: 7rem;
-  transition: 0.15s linear;
-
-  &:hover {
-    background: $blue;
-  }
-
-  &--orange {
-    background: $orange;
-  }
-
-  @media screen and (min-width: $toDesktop) {
-    padding: 10px 15px;
-  }
-}
-
 
 .ctaSection {
 
   @media screen and (min-width: $toTablet) {
     display: flex;
     flex-flow: column;
+  }
+
+  &__button {
+    background: $black;
+    color: $white;
+    border: none;
+    padding: 10px 15px;
+    font-family: 'Noto Serif JP', sans-serif;
+    cursor: pointer;
+    width: 7rem;
+    transition: 0.15s linear;
+
+    &:hover {
+      background: $blue;
+    }
+
+    &--orange {
+      background: $orange;
+    }
+
+    @media screen and (min-width: $toDesktop) {
+      padding: 10px 15px;
+    }
   }
 
   &__textAndImageWrapper {
@@ -170,19 +170,21 @@ h2 {
     }
   }
 
-  .ctaSection__smallImage {
-    @media screen and (min-width: $toDesktop) {
-      width: 30%;
-    }
-  }
-
   &--redHeadline {
+    
     h3 {
       color: $orange;
     }
   }
 
   &--smallConversion {
+
+    .ctaSection__smallImage {
+      @media screen and (min-width: $toDesktop) {
+        width: 30%;
+      }
+    }
+
     .ctaSection__textAndImageWrapper {
 
       @media screen and (min-width: $toDesktop) {
@@ -246,7 +248,6 @@ h2 {
     }
 
     &::before {
-
       content: '';
       border-bottom: 0px solid $blue;
       border-top: 10px solid transparent;
@@ -289,7 +290,6 @@ h2 {
 
       @media screen and (min-width: $toBigDesktop) {
         left: calc(30% + 17rem);
-        ;
       }
 
     }
